@@ -5,7 +5,13 @@ import ImagePreview from './ImagePreview';
 
 const Layout = props => (
   <div className={B['container-fluid']}>
-    <div className={B.row}>
+    <div className={`${B.row} ${B['mt-3']} ${B['mb-4']}`}>
+      <div className={B['col-md-12']}>
+        <h1 className={B.h2}>CSS Filters Playground</h1>
+      </div>
+    </div>
+
+    <div className={`${B.row} ${B['mb-5']}`}>
       <div className={B['col-md-4']}>
         <Filters />
       </div>
@@ -15,14 +21,6 @@ const Layout = props => (
       </div>
     </div>
   </div>
-
-  // <div className={B.card} style={{ width: '32rem' }}>
-  //   <ImagePreview />
-
-  //   <div className={B['card-body']}>
-  //     <Filters />
-  //   </div>
-  // </div>
 );
 
 export default Layout;
