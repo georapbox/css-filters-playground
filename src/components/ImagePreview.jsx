@@ -1,6 +1,6 @@
 import React from 'react';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
-import previewImg from '../assets/images/preview.jpg';
+import sampleImage from '../assets/images/sample.jpg';
 import { connect } from 'react-redux';
 
 const makeFilterCSS = filters => {
@@ -51,7 +51,7 @@ const ImagePreview = props => (
   <div className={Bootstrap['embed-responsive']}>
     <img
       className={Bootstrap['card-img-top']}
-      src={previewImg} alt="Preview"
+      src={sampleImage} alt="Preview"
       style={{ filter: makeFilterCSS(props.filters) }}
     />
   </div>
