@@ -1,7 +1,7 @@
 import React from 'react';
 import B from 'bootstrap/dist/css/bootstrap.css';
-import Filters from './Filters';
-import ImagePreview from './ImagePreview';
+import Filters from './Filters/Filters';
+import ImagePreview from './ImagePreview/ImagePreview';
 
 const Layout = props => (
   <div className={B['container-fluid']}>

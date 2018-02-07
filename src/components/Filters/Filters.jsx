@@ -2,19 +2,8 @@ import B from 'bootstrap/dist/css/bootstrap.css';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import { changeFilter, resetFilters } from '../actions/action-creators';
-
-const initialValues = {
-  blur: '0',
-  contrast: '100',
-  grayscale: '0',
-  sepia: '0',
-  brightness: '1.0',
-  invert: '0',
-  opacity: '100',
-  saturate: '100',
-  'hue-rotate': '0'
-};
+import { changeFilter, resetFilters } from '../../actions/action-creators';
+import initialValues from './lib/initialValues';
 
 class Filters extends Component {
   onInputChange = event => {
@@ -63,7 +52,6 @@ class Filters extends Component {
             id="contrast"
             min="0"
             max="200"
-            step="5"
             name="contrast"
             type="number"
             component="input"
@@ -78,7 +66,6 @@ class Filters extends Component {
             id="grayscale"
             min="0"
             max="100"
-            step="1"
             name="grayscale"
             type="number"
             component="input"
@@ -93,7 +80,6 @@ class Filters extends Component {
             id="sepia"
             min="0"
             max="100"
-            step="1"
             name="sepia"
             type="number"
             component="input"
@@ -106,9 +92,8 @@ class Filters extends Component {
           {this.renderLabel('hue-rotate', 'deg')}
           <Field
             id="hue-rotate"
-            min="-360"
+            min="0"
             max="360"
-            step="1"
             name="hue-rotate"
             type="number"
             component="input"
@@ -118,12 +103,10 @@ class Filters extends Component {
         </div>
 
         <div className={B['form-group']}>
-          {this.renderLabel('brightness', '')}
+          {this.renderLabel('brightness', '%')}
           <Field
             id="brightness"
             min="0"
-            max="1.0"
-            step="0.1"
             name="brightness"
             type="number"
             component="input"
@@ -138,7 +121,6 @@ class Filters extends Component {
             id="invert"
             min="0"
             max="100"
-            step="1"
             name="invert"
             type="number"
             component="input"
@@ -153,7 +135,6 @@ class Filters extends Component {
             id="opacity"
             min="0"
             max="100"
-            step="1"
             name="opacity"
             type="number"
             component="input"
@@ -168,7 +149,6 @@ class Filters extends Component {
             id="saturate"
             min="0"
             max="100"
-            step="1"
             name="saturate"
             type="number"
             component="input"

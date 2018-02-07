@@ -1,6 +1,7 @@
 import { FILTER_CHANGE, RESET_FILTERS } from '../actions/action-types';
+import initialFilters from '../components/Filters/lib/initialValues';
 
-export const filtersReducer = (state = {}, action) => {
+const filtersReducer = (state = initialFilters, action) => {
   switch (action.type) {
     case FILTER_CHANGE:
     case RESET_FILTERS:
@@ -8,4 +9,6 @@ export const filtersReducer = (state = {}, action) => {
     default:
       return state;
   }
-}
+};
+
+export default filtersReducer;
