@@ -5,7 +5,10 @@ const filtersReducer = (state = initialFilters, action) => {
   switch (action.type) {
     case FILTER_CHANGE:
     case RESET_FILTERS:
-      return Object.assign({}, state, action.payload);
+      return {
+        ...state,
+        ...action.payload
+      };
     default:
       return state;
   }
