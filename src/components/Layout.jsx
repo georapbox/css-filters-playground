@@ -12,12 +12,12 @@ const Layout = props => (
     </div>
 
     <div className={`${B.row} ${B['mb-5']}`}>
-      <div className={B['col-md-4']}>
-        <Filters />
+      <div className={`${B['col-md-8']} ${B['order-md-last']}`}>
+        <ImagePreview />
       </div>
 
-      <div className={B['col-md-8']}>
-        <ImagePreview />
+      <div className={`${B['col-md-4']}`}>
+        <Filters />
       </div>
     </div>
   </div>

@@ -1,17 +1,15 @@
 import React from 'react';
-import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
-import sampleImage from '../../assets/images/sample.jpg';
+import B from 'bootstrap/dist/css/bootstrap.css';
+import sampleImage from '../../assets/images/sample.svg';
 import { connect } from 'react-redux';
 import makeFiltersCSS from '../Filters/lib/makeFiltersCSS';
 
 const ImagePreview = props => (
-  <div className={Bootstrap['embed-responsive']}>
-    <img
-      className={Bootstrap['card-img-top']}
-      src={sampleImage} alt="Preview"
-      style={{ filter: makeFiltersCSS(props.filters) }}
-    />
-  </div>
+  <img
+    className={B['card-img-top']}
+    src={sampleImage} alt="Preview"
+    style={{ maxWidth: '512px', filter: makeFiltersCSS(props.filters) }}
+  />
 );
 
 const mapStateToProps = state => ({

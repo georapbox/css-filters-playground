@@ -20,7 +20,7 @@ class Filters extends Component {
   };
 
   renderLabel = (id, unit) => (
-    <label htmlFor={id}>
+    <label htmlFor={id} className={B['mb-0']}>
       <code>
         filter: {id}({this.props.filters[id] || initialValues[id]}{unit});
       </code>
