@@ -8,6 +8,7 @@ import initialValues from './lib/initialValues';
 class Filters extends Component {
   onInputChange = event => {
     const { props } = this;
+
     props.changeFilter({
       [event.target.name]: event.target.value
     });
