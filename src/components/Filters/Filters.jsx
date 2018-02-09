@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { changeFilter, resetFilters } from '../../actions/action-creators';
 import initialValues from './lib/initialValues';
+import FilterLabel from './FilterLabel';
 
 class Filters extends Component {
   onInputChange = event => {
@@ -34,7 +35,7 @@ class Filters extends Component {
     return (
       <form>
         <div className={B['form-group']}>
-          {this.renderLabel('blur', 'px')}
+          <FilterLabel method="blur" values={`${this.props.filters.blur}px`} />
           <Field
             id="blur"
             min="0"
@@ -48,7 +49,7 @@ class Filters extends Component {
         </div>
 
         <div className={B['form-group']}>
-          {this.renderLabel('contrast', '%')}
+          <FilterLabel method="contrast" values={`${this.props.filters.contrast}%`} />
           <Field
             id="contrast"
             min="0"
@@ -62,7 +63,7 @@ class Filters extends Component {
         </div>
 
         <div className={B['form-group']}>
-          {this.renderLabel('grayscale', '%')}
+          <FilterLabel method="grayscale" values={`${this.props.filters.grayscale}%`} />
           <Field
             id="grayscale"
             min="0"
@@ -76,7 +77,7 @@ class Filters extends Component {
         </div>
 
         <div className={B['form-group']}>
-          {this.renderLabel('sepia', '%')}
+          <FilterLabel method="sepia" values={`${this.props.filters.sepia}%`} />
           <Field
             id="sepia"
             min="0"
@@ -90,12 +91,12 @@ class Filters extends Component {
         </div>
 
         <div className={B['form-group']}>
-          {this.renderLabel('hue-rotate', 'deg')}
+          <FilterLabel method="hue-rotate" values={`${this.props.filters.hueRotate}deg`} />
           <Field
-            id="hue-rotate"
+            id="hueRotate"
             min="0"
             max="360"
-            name="hue-rotate"
+            name="hueRotate"
             type="number"
             component="input"
             className={B['form-control']}
@@ -104,7 +105,7 @@ class Filters extends Component {
         </div>
 
         <div className={B['form-group']}>
-          {this.renderLabel('brightness', '%')}
+          <FilterLabel method="brightness" values={`${this.props.filters.brightness}%`} />
           <Field
             id="brightness"
             min="0"
@@ -117,7 +118,7 @@ class Filters extends Component {
         </div>
 
         <div className={B['form-group']}>
-          {this.renderLabel('invert', '%')}
+          <FilterLabel method="invert" values={`${this.props.filters.invert}%`} />
           <Field
             id="invert"
             min="0"
@@ -131,7 +132,7 @@ class Filters extends Component {
         </div>
 
         <div className={B['form-group']}>
-          {this.renderLabel('opacity', '%')}
+          <FilterLabel method="opacity" values={`${this.props.filters.opacity}%`} />
           <Field
             id="opacity"
             min="0"
@@ -145,7 +146,7 @@ class Filters extends Component {
         </div>
 
         <div className={B['form-group']}>
-          {this.renderLabel('saturate', '%')}
+          <FilterLabel method="saturate" values={`${this.props.filters.saturate}%`} />
           <Field
             id="saturate"
             min="0"
@@ -156,6 +157,54 @@ class Filters extends Component {
             className={B['form-control']}
             onChange={this.onInputChange}
           />
+        </div>
+
+        <FilterLabel method="drop-shadow" values={`${this.props.filters.dropShadowOffsetX}px ${this.props.filters.dropShadowOffsetY}px ${this.props.filters.dropShadowBlurRadius}px ${this.props.filters.dropShadowColor}`} />
+        <div className={B['form-row']}>
+          <div className={`${B['form-group']} ${B['col-md-3']} ${B['col-sm-6']}`}>
+            <Field
+              id="dropShadowOffsetX"
+              name="dropShadowOffsetX"
+              type="number"
+              component="input"
+              className={B['form-control']}
+              onChange={this.onInputChange}
+            />
+          </div>
+
+          <div className={`${B['form-group']} ${B['col-md-3']} ${B['col-sm-6']}`}>
+            <Field
+              id="dropShadowOffsetY"
+              name="dropShadowOffsetY"
+              type="number"
+              component="input"
+              className={B['form-control']}
+              onChange={this.onInputChange}
+            />
+          </div>
+
+          <div className={`${B['form-group']} ${B['col-md-3']} ${B['col-sm-6']}`}>
+            <Field
+              id="dropShadowBlurRadius"
+              name="dropShadowBlurRadius"
+              type="number"
+              component="input"
+              className={B['form-control']}
+              onChange={this.onInputChange}
+            />
+          </div>
+
+          <div className={`${B['form-group']} ${B['col-md-3']} ${B['col-sm-6']}`}>
+            <Field
+              id="dropShadowColor"
+              name="dropShadowColor"
+              type="color"
+              component="input"
+              className={B['form-control']}
+              onChange={this.onInputChange}
+              style={{height: '38px'}}
+            />
+          </div>
         </div>
 
         <button

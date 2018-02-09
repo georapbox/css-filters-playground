@@ -7,5 +7,9 @@ export default {
   invert: '0',
   opacity: '100',
   saturate: '100',
-  'hue-rotate': '0'
+  hueRotate: '0',
+  dropShadowOffsetX: '0',
+  dropShadowOffsetY: '0',
+  dropShadowBlurRadius: '0',
+  dropShadowColor: '#ffffff'
 };
