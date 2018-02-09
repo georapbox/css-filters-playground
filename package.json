@@ -1,7 +1,7 @@
 {
   "name": "css-filters-playground",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
   "homepage": "https://georapbox.github.io/css-filters-playground",
   "repository": {
     "type": "git",
