@@ -1,0 +1,17 @@
+.Header {
+  text-align: center;
+}
+
+.Header__Title {
+  font-size: 1.75rem;
+}
+
+@media screen and (min-width: 576px) {
+  .Header {
+    text-align: left;
+  }
+
+  .Header__Title {
+    font-size: 2rem;
+  }
+}
