@@ -187,6 +187,7 @@ class Filters extends Component {
             <Field
               id="dropShadowBlurRadius"
               name="dropShadowBlurRadius"
+              min="0"
               type="number"
               component="input"
               className={B['form-control']}
