@@ -53,7 +53,6 @@ class Filters extends Component {
           <Field
             id="contrast"
             min="0"
-            max="200"
             name="contrast"
             type="number"
             component="input"
